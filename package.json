@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server --open --config webpack.config.js"
+    "build": "webpack --config build/webpack.config.prod.js",
+    "dev": "webpack-dev-server --open --config build/webpack.config.dev.js"
   },
   "keywords": [],
   "author": "",
@@ -25,12 +25,15 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss": "^7.0.27",
     "postcss-loader": "^3.0.0",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.4",
     "url-loader": "^4.1.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "expose-loader": "^0.7.5",
