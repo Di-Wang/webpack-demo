@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config build/webpack.config.prod.js",
+    "test": "webpack --config build/webpack.config.prod.js",
     "dev": "webpack-dev-server --open --config build/webpack.config.dev.js"
   },
   "keywords": [],

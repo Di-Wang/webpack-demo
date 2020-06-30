@@ -3,13 +3,17 @@ const webpack = require("webpack");
 const merge = require('webpack-merge');
 // 分离css
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// 开发环境
+const env = require('./env.development');
+
+console.log(env);
 const webpackConfigBase = require('./webpack.config.base');
 
 const webpackConfigDev = {
   mode: 'development', // 通过 mode 声明开发环境
   output: {
     filename: 'js/[name].bundle.js',
-    path: path.resolve(__dirname, '../test')
+    path: path.resolve(__dirname, '../dist')
   },
 
   devtool: 'source-map',
@@ -20,6 +24,10 @@ const webpackConfigDev = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
       chunkFilename: 'css/[id].css'
+    }),
+    // 允许在编译时(compile time)配置的全局常量
+    new webpack.DefinePlugin({
+      'process.env': env
     })
   ]
 }

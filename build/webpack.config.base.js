@@ -38,8 +38,7 @@ const setMPA = () => {
       })
     );
   })
-  console.log('entryFiles', entryFiles);
-
+  
   return {
     entry,
     htmlWebpackPlugins
